@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 My AI Avatar Creator 🌟</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Comic+Neue:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <div class="background-animation">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <header>
+            <h1>🎨 Create Your AI Avatar! 🎨</h1>
+            <p class="subtitle">Make a super cool avatar and let AI tell your story! ✨</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Left Panel - Avatar Display -->
+            <div class="avatar-panel">
+                <div id="avatarCard" class="avatar-card">
+                    <div id="avatarContainer" class="avatar-container">
+                        <div id="avatar" class="avatar bounce">
+                            <div class="avatar-face">
+                                <div class="eyes">
+                                    <div class="eye left-eye">
+                                        <div class="pupil"></div>
+                                    </div>
+                                    <div class="eye right-eye">
+                                        <div class="pupil"></div>
+                                    </div>
+                                </div>
+                                <div id="mouth" class="mouth"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="avatarName" class="avatar-name">My Avatar</div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button id="speakBtn" class="game-button speak-btn" disabled>
+                        🔊 Make Me Speak!
+                    </button>
+                    <button id="downloadBtn" class="game-button download-btn" disabled>
+                        💾 Save Avatar Card
+                    </button>
+                    <button id="copyBtn" class="game-button copy-btn" disabled>
+                        📋 Copy Introduction
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Panel - Customization -->
+            <div class="customization-panel">
+                <div class="section">
+                    <h2>👤 About You</h2>
+                    <div class="input-group">
+                        <label for="nameInput">
+                            <span class="emoji">✏️</span> Your Name:
+                        </label>
+                        <input type="text" id="nameInput" placeholder="Enter your awesome name!" maxlength="20">
+                    </div>
+                    <div class="input-group">
+                        <label for="ageSelect">
+                            <span class="emoji">🎂</span> Your Age:
+                        </label>
+                        <select id="ageSelect">
+                            <option value="">Pick your age</option>
+                            <option value="5">5 years old</option>
+                            <option value="6">6 years old</option>
+                            <option value="7">7 years old</option>
+                            <option value="8">8 years old</option>
+                            <option value="9">9 years old</option>
+                            <option value="10">10 years old</option>
+                            <option value="11">11 years old</option>
+                            <option value="12">12 years old</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="hobbyInput">
+                            <span class="emoji">⚽</span> Favorite Hobby:
+                        </label>
+                        <input type="text" id="hobbyInput" placeholder="e.g., Playing soccer, Drawing, Reading"
+                            maxlength="30">
+                    </div>
+                    <div class="input-group">
+                        <label for="colorInput">
+                            <span class="emoji">🎨</span> Favorite Color:
+                        </label>
+                        <input type="text" id="colorInput" placeholder="e.g., Blue, Rainbow, Purple" maxlength="20">
+                    </div>
+                    <div class="input-group">
+                        <label for="dreamJobInput">
+                            <span class="emoji">🌟</span> Dream Job:
+                        </label>
+                        <input type="text" id="dreamJobInput" placeholder="e.g., Astronaut, Teacher, Artist"
+                            maxlength="30">
+                    </div>
+                    <div class="input-group">
+                        <label for="extraPointsInput">
+                            <span class="emoji">📝</span> Extra Points About You:
+                        </label>
+                        <textarea id="extraPointsInput"
+                            placeholder="Tell us more! e.g., I love pizza, I have a pet dog named Max, I can speak 3 languages..."
+                            maxlength="200" rows="3"></textarea>
+                        <small class="hint">Optional - Add any fun facts or special things about you!</small>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>🎭 Choose Avatar Style</h2>
+                    <div class="avatar-styles">
+                        <button class="style-btn active" data-style="robot">
+                            <span class="style-icon">🤖</span>
+                            <span>Robot</span>
+                        </button>
+                        <button class="style-btn" data-style="animal">
+                            <span class="style-icon">🐱</span>
+                            <span>Animal</span>
+                        </button>
+                        <button class="style-btn" data-style="superhero">
+                            <span class="style-icon">🦸</span>
+                            <span>Superhero</span>
+                        </button>
+                        <button class="style-btn" data-style="alien">
+                            <span class="style-icon">👽</span>
+                            <span>Alien</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>🎨 Background Color</h2>
+                    <div class="color-picker-container">
+                        <input type="color" id="colorPicker" value="#ff6b9d">
+                        <div class="color-presets">
+                            <button class="color-preset" style="background: #ff6b9d;" data-color="#ff6b9d"></button>
+                            <button class="color-preset" style="background: #4ecdc4;" data-color="#4ecdc4"></button>
+                            <button class="color-preset" style="background: #ffd93d;" data-color="#ffd93d"></button>
+                            <button class="color-preset" style="background: #a78bfa;" data-color="#a78bfa"></button>
+                            <button class="color-preset" style="background: #fb923c;" data-color="#fb923c"></button>
+                            <button class="color-preset" style="background: #34d399;" data-color="#34d399"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>🤖 AI Settings</h2>
+                    <div class="input-group">
+                        <label for="apiKeyInput">
+                            <span class="emoji">🔑</span> Gemini API Key:
+                        </label>
+                        <input type="password" id="apiKeyInput" placeholder="Enter your API key">
+                        <small class="hint">Get your free API key from <a
+                                href="https://makersuite.google.com/app/apikey" target="_blank">Google AI
+                                Studio</a></small>
+                    </div>
+                </div>
+
+                <button id="generateBtn" class="game-button generate-btn">
+                    ✨ Generate My Introduction! ✨
+                </button>
+
+                <!-- Introduction Display -->
+                <div id="introductionBox" class="introduction-box hidden">
+                    <h3>📜 Your AI Introduction:</h3>
+                    <div id="introductionText" class="introduction-text"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Chatbot Section -->
+        <div class="chatbot-section">
+            <div class="chatbot-header">
+                <h2>💬 Chat with AI Assistant</h2>
+                <p>Ask me anything! I'm here to help! 🤖</p>
+            </div>
+
+            <div id="chatContainer" class="chat-container">
+                <div id="chatMessages" class="chat-messages">
+                    <div class="chat-message ai-message">
+                        <div class="message-avatar">🤖</div>
+                        <div class="message-content">
+                            <p>Hi there! I'm your AI assistant! Ask me anything - I can help with homework, answer
+                                questions, tell jokes, or just chat! What would you like to know? 😊</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="typingIndicator" class="typing-indicator hidden">
+                    <div class="message-avatar">🤖</div>
+                    <div class="typing-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-input-container">
+                <input type="text" id="chatInput" placeholder="Type your question here..." maxlength="500">
+                <button id="sendChatBtn" class="game-button send-btn">
+                    📤 Send
+                </button>
+                <button id="clearChatBtn" class="game-button clear-chat-btn">
+                    🗑️ Clear
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confetti Container -->
+    <div id="confettiContainer" class="confetti-container"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
